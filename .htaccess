@@ -1,0 +1,19 @@
+Options -Indexes
+DirectoryIndex login.php
+RewriteEngine On
+RewriteBase /doggiebot/
+RewriteRule ^login/?$ login.php [L,QSA]
+RewriteRule ^logout/?$ logout.php [L,QSA]
+RewriteRule ^dashboard/?$ index.php?page=dashboard [L,QSA]
+RewriteRule ^contactos/?$ index.php?page=contacts [L,QSA]
+RewriteRule ^productos/?$ index.php?page=products [L,QSA]
+RewriteRule ^pedidos/?$ index.php?page=orders [L,QSA]
+RewriteRule ^reservaciones/?$ index.php?page=reservations [L,QSA]
+RewriteRule ^facturacion/?$ index.php?page=invoices [L,QSA]
+RewriteRule ^eventos/?$ index.php?page=events [L,QSA]
+RewriteRule ^plantillas/?$ index.php?page=messages [L,QSA]
+RewriteRule ^configuracion/?$ index.php?page=settings [L,QSA]
+RewriteRule ^mi-cuenta/?$ index.php?page=profile [L,QSA]
+<FilesMatch "^(config\.php|config\.example\.php)$|\.(sql|md)$">
+  Require all denied
+</FilesMatch>
